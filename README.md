@@ -141,9 +141,9 @@ Este método assegura eficiência no processamento de dados e minimiza a carga s
 | countries      |        255 |  15.9 Kb |
 | establishments | 12.289.370 |   2.4 Gb |
 | legal_natures  |         90 |  13.2 Kb |
-| partners       |  7.526.181 | 774.3 Mb |
+| partners       |  8.703.552 |   1.3 Gb |
 | partners_qualifications |         68 |  11.1 Kb |
-| simples | 18.863.731 | 837.0 Mb |
+| simples | 18.829.907 |   1.1 Gb |
 
 ## Licença
 Distribuído sob a Licença MIT. Veja LICENSE para mais informações.

@@ -85,6 +85,13 @@ class CSVProcessingService
         ProcessCsvRecords::dispatch("$redisKey-$uid", get_class($model));
     }
 
+    /**
+     * Normalize the data from the CSV file
+     *
+     * @param array $record
+     * @param Model $model
+     * @return array
+     */
     private function normalizeData(array $record, Model $model): array
     {
         $normalizedRecord = [];
@@ -103,6 +110,12 @@ class CSVProcessingService
         return $normalizedRecord;
     }
 
+    /**
+     * Normalize a date field
+     *
+     * @param string|null $value
+     * @return string|null
+     */
     private function normalizeDateField(?string $value): ?string
     {
         if ($value === '00000000' || $value === '') {
@@ -114,9 +127,9 @@ class CSVProcessingService
 
     /**
      * @param string|null $value
-     * @return array|false|string|string[]|null
+     * @return string|null
      */
-    private function normalizeField(?string $value)
+    private function normalizeField(?string $value): ?string
     {
         if ($value === '') {
             return null;

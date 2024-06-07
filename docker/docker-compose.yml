@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  #Database Service
+  # PGSQL Database Service
   db:
     image: postgres:16
     container_name: postgres
@@ -11,11 +11,25 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: cnpj
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
 
-    # Redis Service
+  # MySQL Database Service
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+  # Redis Service
   redis:
     image: redis:6.0-alpine # Use Redis version 6.0 Alpine for smaller image size
     container_name: redis
@@ -43,3 +57,5 @@ services:
     ports:
       - "9000:9000"
     working_dir: /var/www
+    env_file:
+      - ../src/.env
