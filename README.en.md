@@ -9,7 +9,7 @@
 This repository contains an application designed for processing CNPJ data (the Brazilian equivalent of a business tax identification number). It's built using the Laravel framework for PHP and utilizes Docker for easy setup and deployment. The application handles large CSV files, processes them, and stores the data in a MySQL/PostgreSQL database for further analysis.
 
 The download of the Receita Federal data files can be done [here](https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj) -
-last updated in 2024-01-19.
+last updated in 2024-05-15.
 
 ## Features
 - Process large CSV files with CNPJ data.
@@ -133,15 +133,15 @@ This method ensures efficiency in data processing and minimizes the load on the 
 
 | Table                   |    Records |     Size |
 |-------------------------|-----------:|---------:|
-| cities         |      5.571 | 266.7 Kb |
-| cnaes          |      1.359 | 135.6 Kb |
-| companies      | 22.036.299 |   2.0 Gb |
-| countries      |        255 |  15.9 Kb |
-| establishments | 12.289.370 |   2.4 Gb |
-| legal_natures  |         90 |  13.2 Kb |
-| partners       |  7.526.181 | 774.3 Mb |
-| partners_qualifications |         68 |  11.1 Kb |
-| simples | 18.863.731 | 837.0 Mb |
+| cities         |      5.571 |  600 Kb |
+| cnaes          |      1.359 |  248 Kb |
+| companies      | 57.707.950 |   11 Gb |
+| countries      |        255 |   64 Kb |
+| establishments | 45.200.973 |   17 Gb |
+| legal_natures  |         90 |   56 Kb |
+| partners       | 23.084.108 | 4.48 Gb |
+| partners_qualifications |         68 |   24 Kb |
+| simples | 38.960.381 | 4.71 Gb |
 
 ## License
 Distributed under the MIT License. See LICENSE for more information.
