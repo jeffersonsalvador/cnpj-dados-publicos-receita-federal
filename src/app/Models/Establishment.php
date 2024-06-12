@@ -15,7 +15,8 @@ use Illuminate\Database\Eloquent\Model;
 class Establishment extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'code';
+
+    protected $primaryKey = ['basic_cnpj', 'cnpj_order', 'cnpj_dv'];
 
     /**
      * The attributes that are mass assignable.

@@ -10,9 +10,9 @@ class Partner extends Model
     use HasFactory;
 
     /**
-     * @var string $primaryKey
+     * @var string|array $primaryKey
      */
-    protected $primaryKey = 'basic_cnpj';
+    protected $primaryKey = ['basic_cnpj', 'partner_identifier', 'cnpj_cpf_partner'];
 
     /**
      * @var string[] $fillable
